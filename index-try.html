@@ -1,0 +1,1777 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Happy Birthday Kshitij! 🎉</title>
+    <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet" />
+    <style>
+        *,
+        *::before,
+        *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+         :root {
+            --yellow: #FFD93D;
+            --pink: #FF6B9D;
+            --orange: #FF8C42;
+            --cyan: #00D4FF;
+            --purple: #A855F7;
+            --green: #06D6A0;
+            --red: #FF4757;
+            --white: #FFFDF7;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: #0f0c29;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+        
+        #confetti-canvas {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 0;
+        }
+        /* ── HERO ── */
+        
+        .hero {
+            position: relative;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding: 2rem 1rem;
+            background: radial-gradient(ellipse at 20% 50%, #3b1f6e 0%, transparent 60%), radial-gradient(ellipse at 80% 20%, #1a3a6e 0%, transparent 60%), radial-gradient(ellipse at 60% 80%, #6e1f3b 0%, transparent 50%), linear-gradient(135deg, #0f0c29 0%, #302b63 50%, #24243e 100%);
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background-image: radial-gradient(circle at 25% 25%, rgba(255, 217, 61, 0.08) 0%, transparent 40%), radial-gradient(circle at 75% 75%, rgba(255, 107, 157, 0.08) 0%, transparent 40%);
+            pointer-events: none;
+        }
+        
+        .balloon {
+            position: absolute;
+            animation: floatBalloon linear infinite;
+            opacity: 0.75;
+            font-size: 2.5rem;
+            user-select: none;
+            pointer-events: none;
+        }
+        
+        @keyframes floatBalloon {
+            0% {
+                transform: translateY(110vh) rotate(-10deg);
+                opacity: 0;
+            }
+            10% {
+                opacity: 0.75;
+            }
+            90% {
+                opacity: 0.75;
+            }
+            100% {
+                transform: translateY(-10vh) rotate(10deg);
+                opacity: 0;
+            }
+        }
+        
+        .hero-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--yellow), var(--orange));
+            color: #1a0a00;
+            font-weight: 800;
+            font-size: 0.85rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            padding: 0.4rem 1.2rem;
+            border-radius: 999px;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 0 20px rgba(255, 217, 61, 0.5);
+            animation: pulse 2s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%,
+            100% {
+                transform: scale(1);
+                box-shadow: 0 0 20px rgba(255, 217, 61, 0.5);
+            }
+            50% {
+                transform: scale(1.05);
+                box-shadow: 0 0 40px rgba(255, 217, 61, 0.8);
+            }
+        }
+        
+        .hero-title {
+            font-family: 'Pacifico', cursive;
+            font-size: clamp(3rem, 12vw, 8rem);
+            line-height: 1.1;
+            background: linear-gradient(135deg, var(--yellow) 0%, var(--pink) 40%, var(--cyan) 80%, var(--yellow) 100%);
+            background-size: 300% 300%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 4s ease infinite;
+            filter: drop-shadow(0 0 30px rgba(255, 217, 61, 0.3));
+            margin-bottom: 0.5rem;
+        }
+        
+        @keyframes gradientShift {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        
+        .hero-name {
+            font-family: 'Pacifico', cursive;
+            font-size: clamp(3.5rem, 14vw, 9.5rem);
+            line-height: 1;
+            color: var(--white);
+            text-shadow: 0 0 40px rgba(255, 107, 157, 0.8), 4px 4px 0 var(--pink), 8px 8px 0 rgba(255, 107, 157, 0.3);
+            animation: nameGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes nameGlow {
+            0%,
+            100% {
+                text-shadow: 0 0 40px rgba(255, 107, 157, 0.8), 4px 4px 0 var(--pink), 8px 8px 0 rgba(255, 107, 157, 0.3);
+            }
+            50% {
+                text-shadow: 0 0 60px rgba(0, 212, 255, 0.8), 4px 4px 0 var(--cyan), 8px 8px 0 rgba(0, 212, 255, 0.3);
+            }
+        }
+        
+        .hero-emoji-row {
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            margin: 1.5rem 0;
+            animation: bounce 1s ease-in-out infinite alternate;
+            letter-spacing: 0.3em;
+        }
+        
+        @keyframes bounce {
+            from {
+                transform: translateY(0);
+            }
+            to {
+                transform: translateY(-10px);
+            }
+        }
+        
+        .hero-sub {
+            font-size: clamp(1rem, 3vw, 1.3rem);
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 600;
+            margin-bottom: 2.5rem;
+            letter-spacing: 0.05em;
+        }
+        
+        .scroll-hint {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        
+        .scroll-arrow {
+            width: 24px;
+            height: 24px;
+            border-right: 2px solid rgba(255, 255, 255, 0.4);
+            border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+            transform: rotate(45deg);
+            animation: arrowBounce 1.2s ease-in-out infinite;
+        }
+        
+        @keyframes arrowBounce {
+            0%,
+            100% {
+                transform: rotate(45deg) translateY(0);
+            }
+            50% {
+                transform: rotate(45deg) translateY(5px);
+            }
+        }
+        /* ── WISHES SECTION ── */
+        
+        .wishes-section {
+            position: relative;
+            z-index: 1;
+            padding: 5rem 1.5rem;
+            background: linear-gradient(180deg, #0f0c29 0%, #1a1040 30%, #0f0c29 100%);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3.5rem;
+        }
+        
+        .section-header h2 {
+            font-family: 'Pacifico', cursive;
+            font-size: clamp(2rem, 6vw, 3.5rem);
+            color: var(--white);
+            margin-bottom: 0.75rem;
+            text-shadow: 0 0 30px rgba(255, 217, 61, 0.5);
+        }
+        
+        .section-header p {
+            color: rgba(255, 255, 255, 0.55);
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .cards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+            gap: 1.75rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        /* ── FLIP CARD ── */
+        
+        .flip-card {
+            perspective: 1200px;
+            height: 290px;
+            cursor: pointer;
+            opacity: 0;
+            transform: translateY(40px);
+            animation: cardEntrance 0.5s ease forwards;
+        }
+        
+        .flip-card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            -webkit-transition: -webkit-transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
+            border-radius: 24px;
+        }
+        
+        .flip-card.flipped .flip-card-inner {
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+        }
+        
+        .flip-card-front,
+        .flip-card-back {
+            position: absolute;
+            inset: 0;
+            border-radius: 24px;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            -webkit-transform: translateZ(0);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 1.75rem;
+            overflow: hidden;
+        }
+
+        .flip-card-back {
+            -webkit-transform: rotateY(180deg) translateZ(0);
+            transform: rotateY(180deg);
+            overflow: visible;
+            padding: 1.25rem 1.75rem;
+        }
+        
+        .flip-card:nth-child(1) .flip-card-front {
+            background: linear-gradient(135deg, #FF6B9D, #FF8C42);
+        }
+        
+        .flip-card:nth-child(2) .flip-card-front {
+            background: linear-gradient(135deg, #A855F7, #00D4FF);
+        }
+        
+        .flip-card:nth-child(3) .flip-card-front {
+            background: linear-gradient(135deg, #06D6A0, #FFD93D);
+        }
+        
+        .flip-card:nth-child(4) .flip-card-front {
+            background: linear-gradient(135deg, #FF4757, #A855F7);
+        }
+        
+        .flip-card:nth-child(5) .flip-card-front {
+            background: linear-gradient(135deg, #00D4FF, #06D6A0);
+        }
+        
+        .flip-card:nth-child(6) .flip-card-front {
+            background: linear-gradient(135deg, #FFD93D, #FF6B9D);
+        }
+        
+        .flip-card:nth-child(7) .flip-card-front {
+            background: linear-gradient(135deg, #FF8C42, #FFD93D);
+        }
+        
+        .flip-card:nth-child(8) .flip-card-front {
+            background: linear-gradient(135deg, #06D6A0, #00D4FF);
+        }
+        
+        .flip-card:nth-child(9) .flip-card-front {
+            background: linear-gradient(135deg, #FF6B9D, #A855F7);
+        }
+        
+        .flip-card:nth-child(10) .flip-card-front {
+            background: linear-gradient(135deg, #FF4757, #FF8C42);
+        }
+        
+        .flip-card:nth-child(11) .flip-card-front {
+            background: linear-gradient(135deg, #A855F7, #FF6B9D);
+        }
+        
+        .flip-card:nth-child(12) .flip-card-front {
+            background: linear-gradient(135deg, #00D4FF, #A855F7);
+        }
+        
+        .flip-card:nth-child(13) .flip-card-front {
+            background: linear-gradient(135deg, #FFD93D, #FF4757);
+        }
+        
+        .flip-card:nth-child(14) .flip-card-front {
+            background: linear-gradient(135deg, #06D6A0, #FF6B9D);
+        }
+        
+        .flip-card:nth-child(15) .flip-card-front {
+            background: linear-gradient(135deg, #FF8C42, #FF4757);
+        }
+        
+        .flip-card:nth-child(16) .flip-card-front {
+            background: linear-gradient(135deg, #A855F7, #06D6A0);
+        }
+        
+        .flip-card:nth-child(17) .flip-card-front {
+            background: linear-gradient(135deg, #FF6B9D, #00D4FF);
+        }
+        
+        .flip-card:nth-child(18) .flip-card-front {
+            background: linear-gradient(135deg, #FFD93D, #06D6A0);
+        }
+        
+        .flip-card:nth-child(19) .flip-card-front {
+            background: linear-gradient(135deg, #FF4757, #00D4FF);
+        }
+        
+        .flip-card:nth-child(20) .flip-card-front {
+            background: linear-gradient(135deg, #00D4FF, #FFD93D);
+        }
+        
+        .flip-card:nth-child(21) .flip-card-front {
+            background: linear-gradient(135deg, #A855F7, #FF4757);
+        }
+        
+        .flip-card:nth-child(22) .flip-card-front {
+            background: linear-gradient(135deg, #FF8C42, #A855F7);
+        }
+        
+        .flip-card-front::before {
+            content: '';
+            position: absolute;
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            bottom: -50px;
+            right: -50px;
+        }
+        
+        .flip-card-front::after {
+            content: '';
+            position: absolute;
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.08);
+            top: -30px;
+            left: -20px;
+        }
+        
+        .card-front-emoji {
+            font-size: 3.2rem;
+            margin-bottom: 0.6rem;
+            position: relative;
+            z-index: 1;
+            animation: wiggle 3s ease-in-out infinite;
+        }
+        
+        @keyframes wiggle {
+            0%,
+            100% {
+                transform: rotate(-5deg) scale(1);
+            }
+            25% {
+                transform: rotate(5deg) scale(1.1);
+            }
+            75% {
+                transform: rotate(-3deg) scale(0.95);
+            }
+        }
+        
+        .card-front-label {
+            font-size: 0.95rem;
+            font-weight: 800;
+            color: rgba(255, 255, 255, 0.92);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .card-tap-hint {
+            font-size: 0.72rem;
+            color: rgba(255, 255, 255, 0.65);
+            margin-top: 0.35rem;
+            font-weight: 600;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .flip-card-back {
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+        
+        .flip-card:nth-child(1) .flip-card-back {
+            background: linear-gradient(135deg, rgba(255, 107, 157, .18), rgba(255, 140, 66, .18));
+            border-color: rgba(255, 107, 157, .4);
+        }
+        
+        .flip-card:nth-child(2) .flip-card-back {
+            background: linear-gradient(135deg, rgba(168, 85, 247, .18), rgba(0, 212, 255, .18));
+            border-color: rgba(168, 85, 247, .4);
+        }
+        
+        .flip-card:nth-child(3) .flip-card-back {
+            background: linear-gradient(135deg, rgba(6, 214, 160, .18), rgba(255, 217, 61, .18));
+            border-color: rgba(6, 214, 160, .4);
+        }
+        
+        .flip-card:nth-child(4) .flip-card-back {
+            background: linear-gradient(135deg, rgba(255, 71, 87, .18), rgba(168, 85, 247, .18));
+            border-color: rgba(255, 71, 87, .4);
+        }
+        
+        .flip-card:nth-child(5) .flip-card-back {
+            background: linear-gradient(135deg, rgba(0, 212, 255, .18), rgba(6, 214, 160, .18));
+            border-color: rgba(0, 212, 255, .4);
+        }
+        
+        .flip-card:nth-child(6) .flip-card-back {
+            background: linear-gradient(135deg, rgba(255, 217, 61, .18), rgba(255, 107, 157, .18));
+            border-color: rgba(255, 217, 61, .4);
+        }
+        
+        .flip-card:nth-child(7) .flip-card-back {
+            background: linear-gradient(135deg, rgba(255, 140, 66, .18), rgba(255, 217, 61, .18));
+            border-color: rgba(255, 140, 66, .4);
+        }
+        
+        .flip-card:nth-child(8) .flip-card-back {
+            background: linear-gradient(135deg, rgba(6, 214, 160, .18), rgba(0, 212, 255, .18));
+            border-color: rgba(6, 214, 160, .4);
+        }
+        
+        .flip-card:nth-child(9) .flip-card-back {
+            background: linear-gradient(135deg, rgba(255, 107, 157, .18), rgba(168, 85, 247, .18));
+            border-color: rgba(255, 107, 157, .4);
+        }
+        
+        .flip-card:nth-child(10) .flip-card-back {
+            background: linear-gradient(135deg, rgba(255, 71, 87, .18), rgba(255, 140, 66, .18));
+            border-color: rgba(255, 71, 87, .4);
+        }
+        
+        .flip-card:nth-child(11) .flip-card-back {
+            background: linear-gradient(135deg, rgba(168, 85, 247, .18), rgba(255, 107, 157, .18));
+            border-color: rgba(168, 85, 247, .4);
+        }
+        
+        .flip-card:nth-child(12) .flip-card-back {
+            background: linear-gradient(135deg, rgba(0, 212, 255, .18), rgba(168, 85, 247, .18));
+            border-color: rgba(0, 212, 255, .4);
+        }
+        
+        .flip-card:nth-child(13) .flip-card-back {
+            background: linear-gradient(135deg, rgba(255, 217, 61, .18), rgba(255, 71, 87, .18));
+            border-color: rgba(255, 217, 61, .4);
+        }
+        
+        .flip-card:nth-child(14) .flip-card-back {
+            background: linear-gradient(135deg, rgba(6, 214, 160, .18), rgba(255, 107, 157, .18));
+            border-color: rgba(6, 214, 160, .4);
+        }
+        
+        .flip-card:nth-child(15) .flip-card-back {
+            background: linear-gradient(135deg, rgba(255, 140, 66, .18), rgba(255, 71, 87, .18));
+            border-color: rgba(255, 140, 66, .4);
+        }
+        
+        .flip-card:nth-child(16) .flip-card-back {
+            background: linear-gradient(135deg, rgba(168, 85, 247, .18), rgba(6, 214, 160, .18));
+            border-color: rgba(168, 85, 247, .4);
+        }
+        
+        .flip-card:nth-child(17) .flip-card-back {
+            background: linear-gradient(135deg, rgba(255, 107, 157, .18), rgba(0, 212, 255, .18));
+            border-color: rgba(255, 107, 157, .4);
+        }
+        
+        .flip-card:nth-child(18) .flip-card-back {
+            background: linear-gradient(135deg, rgba(255, 217, 61, .18), rgba(6, 214, 160, .18));
+            border-color: rgba(255, 217, 61, .4);
+        }
+        
+        .flip-card:nth-child(19) .flip-card-back {
+            background: linear-gradient(135deg, rgba(255, 71, 87, .18), rgba(0, 212, 255, .18));
+            border-color: rgba(255, 71, 87, .4);
+        }
+        
+        .flip-card:nth-child(20) .flip-card-back {
+            background: linear-gradient(135deg, rgba(0, 212, 255, .18), rgba(255, 217, 61, .18));
+            border-color: rgba(0, 212, 255, .4);
+        }
+        
+        .flip-card:nth-child(21) .flip-card-back {
+            background: linear-gradient(135deg, rgba(168, 85, 247, .18), rgba(255, 71, 87, .18));
+            border-color: rgba(168, 85, 247, .4);
+        }
+        
+        .flip-card:nth-child(22) .flip-card-back {
+            background: linear-gradient(135deg, rgba(255, 140, 66, .18), rgba(168, 85, 247, .18));
+            border-color: rgba(255, 140, 66, .4);
+        }
+        
+        .flip-card:nth-child(1) .sender-name {
+            color: var(--pink);
+        }
+        
+        .flip-card:nth-child(2) .sender-name {
+            color: var(--purple);
+        }
+        
+        .flip-card:nth-child(3) .sender-name {
+            color: var(--green);
+        }
+        
+        .flip-card:nth-child(4) .sender-name {
+            color: var(--red);
+        }
+        
+        .flip-card:nth-child(5) .sender-name {
+            color: var(--cyan);
+        }
+        
+        .flip-card:nth-child(6) .sender-name {
+            color: var(--yellow);
+        }
+        
+        .flip-card:nth-child(7) .sender-name {
+            color: var(--orange);
+        }
+        
+        .flip-card:nth-child(8) .sender-name {
+            color: var(--green);
+        }
+        
+        .flip-card:nth-child(9) .sender-name {
+            color: var(--pink);
+        }
+        
+        .flip-card:nth-child(10) .sender-name {
+            color: var(--red);
+        }
+        
+        .flip-card:nth-child(11) .sender-name {
+            color: var(--purple);
+        }
+        
+        .flip-card:nth-child(12) .sender-name {
+            color: var(--cyan);
+        }
+        
+        .flip-card:nth-child(13) .sender-name {
+            color: var(--yellow);
+        }
+        
+        .flip-card:nth-child(14) .sender-name {
+            color: var(--green);
+        }
+        
+        .flip-card:nth-child(15) .sender-name {
+            color: var(--orange);
+        }
+        
+        .flip-card:nth-child(16) .sender-name {
+            color: var(--purple);
+        }
+        
+        .flip-card:nth-child(17) .sender-name {
+            color: var(--pink);
+        }
+        
+        .flip-card:nth-child(18) .sender-name {
+            color: var(--yellow);
+        }
+        
+        .flip-card:nth-child(19) .sender-name {
+            color: var(--red);
+        }
+        
+        .flip-card:nth-child(20) .sender-name {
+            color: var(--cyan);
+        }
+        
+        .flip-card:nth-child(21) .sender-name {
+            color: var(--purple);
+        }
+        
+        .flip-card:nth-child(22) .sender-name {
+            color: var(--orange);
+        }
+        
+        .wish-text {
+            font-size: 0.88rem;
+            color: rgba(255, 255, 255, 0.85);
+            text-align: center;
+            line-height: 1.65;
+            font-weight: 600;
+            overflow-y: auto;
+            max-height: 110px;
+            padding-right: 4px;
+            scrollbar-width: thin;
+            scrollbar-color: rgba(255,255,255,0.25) transparent;
+        }
+
+        .wish-text::-webkit-scrollbar {
+            width: 4px;
+        }
+
+        .wish-text::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        .wish-text::-webkit-scrollbar-thumb {
+            background: rgba(255, 255, 255, 0.25);
+            border-radius: 99px;
+        }
+
+        .wish-text::-webkit-scrollbar-thumb:hover {
+            background: rgba(255, 255, 255, 0.45);
+        }
+        
+        .flip-back-emoji {
+            font-size: 1.1rem;
+            margin-top: 0.75rem;
+        }
+        /* ── KI REVEAL BUTTON ── */
+        
+        .flip-card-back {
+            position: relative;
+        }
+        
+        .ki-reveal-btn {
+            position: absolute;
+            top: 12px;
+            right: 12px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 2px solid rgba(255, 255, 255, 0.45);
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(6px);
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 0.6rem;
+            font-weight: 800;
+            font-family: 'Nunito', sans-serif;
+            letter-spacing: 0.03em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            transition: background 0.25s, border-color 0.25s, transform 0.2s;
+            user-select: none;
+            line-height: 1;
+        }
+        
+        .ki-reveal-btn:hover {
+            background: rgba(255, 255, 255, 0.22);
+            border-color: rgba(255, 255, 255, 0.7);
+            transform: scale(1.1);
+        }
+        
+        .ki-reveal-btn.revealed {
+            background: rgba(255, 107, 157, 0.35);
+            border-color: rgba(255, 107, 157, 0.8);
+        }
+        /* Name hidden by default on back */
+        
+        .sender-name {
+            font-family: 'Pacifico', cursive;
+            font-size: 1.4rem;
+            margin-bottom: 0.75rem;
+            position: relative;
+            transition: filter 0.4s ease;
+        }
+        
+        .sender-name.hidden-name {
+            filter: blur(10px);
+            user-select: none;
+        }
+        /* Wish text blurs when name is revealed */
+        
+        .wish-text.blurred-for-reveal {
+            filter: blur(4px);
+            transition: filter 0.4s ease;
+        }
+        
+        .wish-text {
+            transition: filter 0.4s ease;
+        }
+        /* Name pop-in animation */
+        
+        @keyframes nameReveal {
+            0% {
+                filter: blur(10px);
+                transform: scale(0.9);
+            }
+            60% {
+                filter: blur(0);
+                transform: scale(1.08);
+            }
+            100% {
+                filter: blur(0);
+                transform: scale(1);
+            }
+        }
+        
+        .sender-name.revealed-name {
+            animation: nameReveal 0.5s ease forwards;
+        }
+        
+        @keyframes cardEntrance {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .flip-card:nth-child(1) {
+            animation-delay: .05s
+        }
+        
+        .flip-card:nth-child(2) {
+            animation-delay: .10s
+        }
+        
+        .flip-card:nth-child(3) {
+            animation-delay: .15s
+        }
+        
+        .flip-card:nth-child(4) {
+            animation-delay: .20s
+        }
+        
+        .flip-card:nth-child(5) {
+            animation-delay: .25s
+        }
+        
+        .flip-card:nth-child(6) {
+            animation-delay: .30s
+        }
+        
+        .flip-card:nth-child(7) {
+            animation-delay: .35s
+        }
+        
+        .flip-card:nth-child(8) {
+            animation-delay: .40s
+        }
+        
+        .flip-card:nth-child(9) {
+            animation-delay: .45s
+        }
+        
+        .flip-card:nth-child(10) {
+            animation-delay: .50s
+        }
+        
+        .flip-card:nth-child(11) {
+            animation-delay: .55s
+        }
+        
+        .flip-card:nth-child(12) {
+            animation-delay: .60s
+        }
+        
+        .flip-card:nth-child(13) {
+            animation-delay: .65s
+        }
+        
+        .flip-card:nth-child(14) {
+            animation-delay: .70s
+        }
+        
+        .flip-card:nth-child(15) {
+            animation-delay: .75s
+        }
+        
+        .flip-card:nth-child(16) {
+            animation-delay: .80s
+        }
+        
+        .flip-card:nth-child(17) {
+            animation-delay: .85s
+        }
+        
+        .flip-card:nth-child(18) {
+            animation-delay: .90s
+        }
+        
+        .flip-card:nth-child(19) {
+            animation-delay: .95s
+        }
+        
+        .flip-card:nth-child(20) {
+            animation-delay: 1.00s
+        }
+        
+        .flip-card:nth-child(21) {
+            animation-delay: 1.05s
+        }
+        
+        .flip-card:nth-child(22) {
+            animation-delay: 1.10s
+        }
+        /* ── BIG GROUP CARD ── */
+        
+        .group-section {
+            position: relative;
+            z-index: 1;
+            padding: 0 1.5rem 5rem;
+        }
+        
+        .group-section-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+        
+        .group-section-header h2 {
+            font-family: 'Pacifico', cursive;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            color: var(--white);
+            text-shadow: 0 0 30px rgba(255, 217, 61, 0.5);
+            margin-bottom: 0.5rem;
+        }
+        
+        .group-section-header p {
+            color: rgba(255, 255, 255, 0.5);
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+        
+        .big-flip-card {
+            perspective: 1800px;
+            max-width: 980px;
+            margin: 0 auto;
+            cursor: pointer;
+        }
+        
+        .big-flip-inner {
+            position: relative;
+            width: 100%;
+            transform-style: preserve-3d;
+            -webkit-transform-style: preserve-3d;
+            transition: transform 0.9s cubic-bezier(0.4, 0.2, 0.2, 1);
+            -webkit-transition: -webkit-transform 0.9s cubic-bezier(0.4, 0.2, 0.2, 1);
+            border-radius: 32px;
+        }
+        /* JS sets height dynamically; static fallback */
+        
+        .big-flip-inner {
+            min-height: 420px;
+        }
+        
+        .big-flip-card.flipped .big-flip-inner {
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg);
+        }
+        
+        .big-flip-front,
+        .big-flip-back {
+            border-radius: 32px;
+            -webkit-backface-visibility: hidden;
+            backface-visibility: hidden;
+            overflow: hidden;
+        }
+        /* front: absolute, back: static so it drives height */
+        
+        .big-flip-front {
+            position: absolute;
+            inset: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 3rem 2rem;
+            background: linear-gradient(135deg, #FF6B9D 0%, #A855F7 35%, #00D4FF 70%, #06D6A0 100%);
+            -webkit-transform: translateZ(0);
+        }
+        
+        .big-flip-back {
+            position: relative;
+            transform: rotateY(180deg);
+            -webkit-transform: rotateY(180deg) translateZ(0);
+            padding: 2.5rem 2rem 2rem;
+            background: linear-gradient(135deg, #13002a 0%, #1a0040 50%, #001a2e 100%);
+            border: 2px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .big-flip-front::before {
+            content: '';
+            position: absolute;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.07);
+            bottom: -160px;
+            right: -120px;
+            pointer-events: none;
+        }
+        
+        .big-flip-front::after {
+            content: '';
+            position: absolute;
+            width: 260px;
+            height: 260px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            top: -80px;
+            left: -60px;
+            pointer-events: none;
+        }
+        
+        .big-front-emoji {
+            font-size: 5rem;
+            margin-bottom: 1rem;
+            position: relative;
+            z-index: 1;
+            animation: bigBounce 2s ease-in-out infinite alternate;
+        }
+        
+        @keyframes bigBounce {
+            from {
+                transform: translateY(0) scale(1);
+            }
+            to {
+                transform: translateY(-15px) scale(1.08);
+            }
+        }
+        
+        .big-front-title {
+            font-family: 'Pacifico', cursive;
+            font-size: clamp(1.8rem, 5vw, 3rem);
+            color: white;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+        
+        .big-front-sub {
+            font-size: 1rem;
+            color: rgba(255, 255, 255, 0.82);
+            font-weight: 700;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .big-back-title {
+            font-family: 'Pacifico', cursive;
+            font-size: clamp(1.4rem, 4vw, 2rem);
+            text-align: center;
+            margin-bottom: 1.75rem;
+            background: linear-gradient(135deg, var(--yellow), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .wishes-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1rem 1.5rem;
+            width: 100%;
+        }
+        
+        .wish-item {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            border-radius: 16px;
+            padding: 1rem 1.1rem;
+            transition: background 0.3s;
+        }
+        
+        .wish-item:hover {
+            background: rgba(255, 255, 255, 0.09);
+        }
+        
+        .wish-item-name {
+            font-family: 'Pacifico', cursive;
+            font-size: 1rem;
+            margin-bottom: 0.35rem;
+        }
+        
+        .wish-item:nth-child(1) .wish-item-name {
+            color: var(--yellow);
+        }
+        
+        .wish-item:nth-child(2) .wish-item-name {
+            color: var(--pink);
+        }
+        
+        .wish-item:nth-child(3) .wish-item-name {
+            color: var(--cyan);
+        }
+        
+        .wish-item:nth-child(4) .wish-item-name {
+            color: var(--green);
+        }
+        
+        .wish-item:nth-child(5) .wish-item-name {
+            color: var(--orange);
+        }
+        
+        .wish-item:nth-child(6) .wish-item-name {
+            color: var(--purple);
+        }
+        
+        .wish-item:nth-child(7) .wish-item-name {
+            color: var(--red);
+        }
+        
+        .wish-item:nth-child(8) .wish-item-name {
+            color: var(--yellow);
+        }
+        
+        .wish-item:nth-child(9) .wish-item-name {
+            color: var(--cyan);
+        }
+        /* last item full-width if it's alone in its row */
+        
+        .wish-item:last-child:nth-child(odd) {
+            grid-column: 1 / -1;
+        }
+        
+        .wish-item-text {
+            font-size: 0.82rem;
+            color: rgba(255, 255, 255, 0.78);
+            line-height: 1.6;
+            font-weight: 600;
+        }
+        /* ── FOOTER ── */
+        
+        .footer {
+            position: relative;
+            z-index: 1;
+            text-align: center;
+            padding: 3rem 1rem 2.5rem;
+            background: #0a0818;
+        }
+        
+        .footer-title {
+            font-family: 'Pacifico', cursive;
+            font-size: clamp(1.5rem, 5vw, 2.5rem);
+            background: linear-gradient(135deg, var(--yellow), var(--pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer p {
+            color: rgba(255, 255, 255, 0.4);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        /* stars */
+        
+        .stars {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 0;
+            overflow: hidden;
+        }
+        
+        .star {
+            position: absolute;
+            border-radius: 50%;
+            background: white;
+            animation: twinkle ease-in-out infinite;
+        }
+        
+        @keyframes twinkle {
+            0%,
+            100% {
+                opacity: 0.1;
+                transform: scale(1);
+            }
+            50% {
+                opacity: 0.7;
+                transform: scale(1.4);
+            }
+        }
+        /* ── RESPONSIVE ── */
+        
+        @media (max-width: 700px) {
+            .cards-grid {
+                grid-template-columns: 1fr 1fr;
+                gap: 1rem;
+            }
+            .flip-card {
+                height: 230px;
+            }
+            .card-front-emoji {
+                font-size: 2.4rem;
+            }
+            .sender-name {
+                font-size: 1.1rem;
+            }
+            .wish-text {
+                font-size: 0.75rem;
+            }
+            .wishes-list {
+                grid-template-columns: 1fr;
+            }
+            .wish-item:last-child:nth-child(odd) {
+                grid-column: auto;
+            }
+            .big-flip-inner {
+                min-height: 360px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .cards-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="stars" id="stars"></div>
+    <canvas id="confetti-canvas"></canvas>
+
+    <!-- ── HERO ── -->
+    <section class="hero">
+        <div class="balloon" style="left:5%;animation-duration:8s;animation-delay:0s;">🎈</div>
+        <div class="balloon" style="left:15%;animation-duration:10s;animation-delay:2s;">🎀</div>
+        <div class="balloon" style="left:28%;animation-duration:7s;animation-delay:4s;">🎊</div>
+        <div class="balloon" style="left:45%;animation-duration:9s;animation-delay:1s;">🎈</div>
+        <div class="balloon" style="left:62%;animation-duration:11s;animation-delay:3s;">🎉</div>
+        <div class="balloon" style="left:78%;animation-duration:8s;animation-delay:5s;">🎀</div>
+        <div class="balloon" style="left:91%;animation-duration:12s;animation-delay:0.5s;">🎈</div>
+
+        <div class="hero-badge">🎂 It's a special day! 🎂</div>
+        <div class="hero-title">Happy Birthday</div>
+        <div class="hero-name">Kshitij!</div>
+        <div class="hero-emoji-row">🎉 🎊 🥳 🎂 🎁</div>
+        <div class="hero-sub">Your loved ones have something to say — scroll down!</div>
+        <div class="scroll-hint">
+            <span>See wishes</span>
+            <div class="scroll-arrow"></div>
+        </div>
+    </section>
+
+    <!-- ── 22 FLIP CARDS ── -->
+    <section class="wishes-section">
+        <div class="section-header">
+            <h2>💌 Wishes from your crew</h2>
+            <p>Tap or click a card to reveal the message inside and guess who sent it!</p>
+        </div>
+
+        <div class="cards-grid">
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🎉</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Mom & Dad</div>
+                        <div class="wish-text">YOU ARE MY WORLD. MAY GOD AlWAYS GIVE YOU WHAT IS THE BEST FOR YOU. HAPPY BIRTHDAY DEAR 😘😍🍫🍰🥳 ENJOY 🥳</div>
+                        <div class="flip-back-emoji">🎊🎈</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">😂</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Sayali</div>
+                        <div class="wish-text">Tolerating since agessss!!..School madhe vatla nhavta you will be my best friend some day hehe jk...the most calm and patient person I ever met..lucky to have you! </div>
+                        <div class="flip-back-emoji">💜✨</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🌟</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Rajveer</div>
+                        <div class="wish-text">There are very few people who actually define your 2 years of mba, you were that definition for me🌟</div>
+                        <div class="flip-back-emoji">💚🌈</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🔥</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Anup</div>
+                        <div class="wish-text">The guy who quietly carried ARC on his shoulders and was always there whenever any of us needed help.🥳</div>
+                        <div class="flip-back-emoji">🔥💪</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🎂</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Anjana</div>
+                        <div class="wish-text">Our very own wikipedia and a great person to yapp to about anything and everything.🎂</div>
+                        <div class="flip-back-emoji">💙🎉</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🥳</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Nikita</div>
+                        <div class="wish-text">I’ll always remember Kshitij as the anchor that held arc together with his determination, passion , friendship and ofc best (lame dad ) jokes 🎊</div>
+                        <div class="flip-back-emoji">💛🎈</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🚀</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Muskan</div>
+                        <div class="wish-text">The one dogs would proudly call their favorite human, our most dependable and hardworking secy, and a true calm in the chaos person, a big faffer ofc, just maybe save a little less calm for when someone charges with a bat. Missing
+                            your just perfect humour. Lots of love😄🚀</div>
+                        <div class="flip-back-emoji">🌙⭐</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🌸</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Pallav</div>
+                        <div class="wish-text">Happy Birthday, Kshitij! 🎉🥳 from all the fun moments to the solid bond we share, you have always been someone I truly value as a friend. Wishing you a year full of happiness, laughter, and everything you love most!!!🌸</div>
+                        <div class="flip-back-emoji">🌺💕</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🎸</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Prachi</div>
+                        <div class="wish-text">Dearest Remo, From the weirdest conversation we had even before we were a part of ARC to meeting in Pune.. We have come a long way.. You share my broken humour😭 All the jokes, even the weirdest and the most racist one.. Its just
+                            a matter of glance..that exchanged look says it all... You are so great Wishing you a very Happy Birthday my Main duck❤️❤️❤️</div>
+                        <div class="flip-back-emoji">🤘🔊</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🦋</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Sara</div>
+                        <div class="wish-text">May your inbox always stay empty (in a good way lol) and your year be as clean as my camera, Happy Birthday!!!🦋</div>
+                        <div class="flip-back-emoji">🌈✨</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">⚡</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Darshan</div>
+                        <div class="wish-text">Consecutive interviews, same journeys, and almost 100 takes to satisfy alumni hunger… only one person could tolerate all that, probably the best secy I could ever ask for 😂😂⚡</div>
+                        <div class="flip-back-emoji">💥🔥</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🏆</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Piyush</div>
+                        <div class="wish-text">Just the right amount of everything. Be it, compassion, courage or courtesy. My 3 am ARC helpline.🏆</div>
+                        <div class="flip-back-emoji">🥇🎯</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🍕</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Pavithra</div>
+                        <div class="wish-text"> When in doubt, ask Kshitij.... hasn’t failed me yet 🍕
+                        </div>
+                        <div class="flip-back-emoji">😄🎈</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🌊</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Samarth</div>
+                        <div class="wish-text">Half workaholic, half comedian, full-time legend🌊</div>
+                        <div class="flip-back-emoji">🏄🌅</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">💎</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Kathan</div>
+                        <div class="wish-text">The one who was brutally honest with CV edits and quietly made sure I believed in myself when the general elections came around. 💎
+                        </div>
+                        <div class="flip-back-emoji">✨👑</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🎮</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Krutika</div>
+                        <div class="wish-text">Genuine question: Behind that unreadable face, were you contemplating the mechanics of 3D printers, the sharpness of knives, or just loading a joke so bad it should be illegal?🎮</div>
+                        <div class="flip-back-emoji">🕹️🏅</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🌙</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Nanditha</div>
+                        <div class="wish-text">From the most serious secretary to the pookie who absolutely nails ‘maar daala’ dance, thankyou for being our rock, our first line of defense and an amazing human.🌙</div>
+                        <div class="flip-back-emoji">💫🌟</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🦁</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Sahil</div>
+                        <div class="wish-text">Yeh college mein favours milna bhut mushkil h,humne pehle 2 mahine mein hi saare exhaust kr diye🦁</div>
+                        <div class="flip-back-emoji">👊🎉</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🍰</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Devanshi</div>
+                        <div class="wish-text">After knowing you officially and unofficially now, i can fully imagine you getting a pep talk from baaki seniors “KSHITIJ JHAAD KE AANA HAI” before addressing us😭🍰</div>
+                        <div class="flip-back-emoji">🎂🥰</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🌍</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Prajakta</div>
+                        <div class="wish-text">I have said this a lot before but Kshitij is the most patient and calm person I know. While I love that about him it is just to difficult to read him!!😭😭. Other thing that I love about him is he is also so passionate about the
+                            things he loves, whenever there’d be a cute moment he’ll always be taking pics 🥹 cutest person!🌍</div>
+                        <div class="flip-back-emoji">✈️🗺️</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🦄</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Nishita</div>
+                        <div class="wish-text">Swiggy se khana mangawa acchi baat hai (in a very screechy high pitched voice)</div>
+                        <div class="flip-back-emoji">🌈💖</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="flip-card" onclick="this.classList.toggle('flipped')">
+                <div class="flip-card-inner">
+                    <div class="flip-card-front">
+                        <div class="card-front-emoji">🎆</div>
+                        <div class="card-front-label">A Wish For You</div>
+                        <div class="card-tap-hint">tap to open</div>
+                    </div>
+                    <div class="flip-card-back">
+                        <button class="ki-reveal-btn" onclick="revealName(event, this)" title="Reveal sender">who</button>
+                        <div class="sender-name hidden-name">Swaraj</div>
+                        <div class="wish-text">If there was a best senior secretary competition, he'd win by a mile. That's the kind of impact he's had on the work we did as a committee and the bonds he forged. He's like a big brother to me, always has my back. Happy birthday
+                            Kshitij, you're one of the nicest humans I know ❤️ P.S. Thanks to you, I can use another credit card.😆🎆</div>
+                        <div class="flip-back-emoji">🎇🥳</div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- ── BIG GROUP CARD ── -->
+    <section class="group-section">
+        <div class="group-section-header">
+            <h2>🎁 A Special Message From Everyone</h2>
+            <p>One big card, full of love — tap to open!</p>
+        </div>
+
+        <div class="big-flip-card" id="bigCard" onclick="toggleBigCard(this)">
+            <div class="big-flip-inner" id="bigInner">
+
+                <div class="big-flip-front">
+                    <div class="big-front-emoji">💌</div>
+                    <div class="big-front-title">To Kshitij, With Love</div>
+                    <div class="big-front-sub">Some advice, some praise, maybe a little roast… guess which senior said what!💕</div>
+                </div>
+
+                <div class="big-flip-back" id="bigBack">
+                    <div class="big-back-title">💌 They said it. You guess it. 💌</div>
+                    <div class="wishes-list">
+
+                        <div class="wish-item">
+                            <div class="wish-item-text">Bro gave an election pitch so bad, it’s now part of ARC folklore</div>
+                        </div>
+
+                        <div class="wish-item">
+                            <div class="wish-item-text">Explains things like he’s buffering on 2G—slow motion, but eventually gets there.</div>
+                        </div>
+
+                        <div class="wish-item">
+                            <div class="wish-item-text">Every time we say ‘let’s start the review,’ snacks magically appear before anything else</div>
+                        </div>
+
+                        <div class="wish-item">
+                            <div class="wish-item-text">Still waiting for a live demo of the legendary ‘mongodobia tool’… any day now</div>
+                        </div>
+
+                        <div class="wish-item">
+                            <div class="wish-item-text">His dance moves? Somewhere between stand-up comedy and a cardio session</div>
+                        </div>
+
+                        <div class="wish-item">
+                            <div class="wish-item-text">That hairstyle isn’t a look, it’s a bold personal statement.</div>
+                        </div>
+
+                        <div class="wish-item">
+                            <div class="wish-item-text">Pant’s roommate, first love, and honestly the most stable relationship I’ve seen here</div>
+                        </div>
+
+                        <div class="wish-item">
+                            <div class="wish-item-text">Infra + IT = love story stronger than most of ours</div>
+                        </div>
+
+                        <div class="wish-item">
+                            <div class="wish-item-text">Puneri instincts: observe silently, judge accurately… and then ruin the moment with the worst joke possible</div>
+                        </div>
+
+                        <div class="wish-item">
+                            <div class="wish-item-text">Hardworking, dependable, and somehow a jack of all trades—master of making us laugh included</div>
+                        </div>
+                        <div class="wish-item">
+                            <div class="wish-item-text">The ‘bat comment’—confidence unmatched, timing… let’s not discuss.</div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ── FOOTER ── -->
+    <footer class="footer">
+        <div class="footer-title">🎂 Have an epic year, Kshitij! 🎂</div>
+        <p>Made with ❤️</p>
+    </footer>
+
+    <script>
+        /* KI REVEAL */
+        function revealName(e, btn) {
+            e.stopPropagation(); // don't re-flip the card
+            const back = btn.closest('.flip-card-back');
+            const name = back.querySelector('.sender-name');
+            const wishText = back.querySelector('.wish-text');
+
+            if (name.classList.contains('hidden-name')) {
+                // Reveal name
+                name.classList.remove('hidden-name');
+                name.classList.add('revealed-name');
+                // Blur the wish text temporarily
+                wishText.classList.add('blurred-for-reveal');
+                btn.classList.add('revealed');
+                btn.textContent = '✓';
+                // Unblur wish text after a moment
+                setTimeout(() => {
+                    wishText.classList.remove('blurred-for-reveal');
+                }, 1200);
+            } else {
+                // Hide name again (toggle)
+                name.classList.remove('revealed-name');
+                name.classList.add('hidden-name');
+                btn.classList.remove('revealed');
+                btn.textContent = 'who';
+            }
+        }
+
+        /* STARS */
+        const starsEl = document.getElementById('stars');
+        for (let i = 0; i < 130; i++) {
+            const s = document.createElement('div');
+            s.classList.add('star');
+            const size = Math.random() * 2.5 + 0.5;
+            s.style.cssText = `width:${size}px;height:${size}px;top:${Math.random()*100}%;left:${Math.random()*100}%;animation-duration:${Math.random()*4+2}s;animation-delay:${Math.random()*5}s;`;
+            starsEl.appendChild(s);
+        }
+
+        /* BIG CARD FLIP — sync height so back content is fully visible */
+        function toggleBigCard(card) {
+            const inner = document.getElementById('bigInner');
+            const back = document.getElementById('bigBack');
+            card.classList.toggle('flipped');
+            if (card.classList.contains('flipped')) {
+                const h = back.scrollHeight;
+                inner.style.minHeight = h + 'px';
+                card.style.minHeight = h + 'px';
+            } else {
+                inner.style.minHeight = '';
+                card.style.minHeight = '';
+            }
+        }
+
+        /* CONFETTI */
+        const canvas = document.getElementById('confetti-canvas');
+        const ctx = canvas.getContext('2d');
+        let W, H, pieces = [];
+        const COLORS = ['#FFD93D', '#FF6B9D', '#FF8C42', '#00D4FF', '#A855F7', '#06D6A0', '#FF4757', '#FFFDF7'];
+
+        function resize() {
+            W = canvas.width = window.innerWidth;
+            H = canvas.height = window.innerHeight;
+        }
+        window.addEventListener('resize', resize);
+        resize();
+
+        for (let i = 0; i < 160; i++) {
+            pieces.push({
+                x: Math.random() * W,
+                y: Math.random() * H - H,
+                r: Math.random() * 6 + 4,
+                d: Math.random() * 1.5 + 0.5,
+                color: COLORS[Math.floor(Math.random() * COLORS.length)],
+                tilt: Math.random() * 10 - 10,
+                tiltAngle: 0,
+                tiltSpeed: Math.random() * 0.1 + 0.05,
+                shape: Math.random() > 0.5 ? 'rect' : 'circle'
+            });
+        }
+
+        let angle = 0;
+        (function animate() {
+            ctx.clearRect(0, 0, W, H);
+            angle += 0.005;
+            pieces.forEach(p => {
+                p.tiltAngle += p.tiltSpeed;
+                p.y += p.d + Math.sin(angle) * 0.4;
+                p.x += Math.sin(angle + p.tilt) * 0.8;
+                if (p.y > H + 20) {
+                    p.y = -20;
+                    p.x = Math.random() * W;
+                }
+                ctx.save();
+                ctx.translate(p.x, p.y);
+                ctx.rotate(p.tiltAngle);
+                ctx.fillStyle = p.color;
+                ctx.globalAlpha = 0.85;
+                if (p.shape === 'rect') ctx.fillRect(-p.r / 2, -p.r / 2, p.r, p.r * 1.6);
+                else {
+                    ctx.beginPath();
+                    ctx.arc(0, 0, p.r / 2, 0, Math.PI * 2);
+                    ctx.fill();
+                }
+                ctx.restore();
+            });
+            requestAnimationFrame(animate);
+        })();
+    </script>
+</body>
+
+</html>
